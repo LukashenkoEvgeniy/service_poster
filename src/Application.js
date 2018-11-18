@@ -20,9 +20,10 @@ module.exports = class Application {
 
     createPost(document){
         let rating = (100 * document.rating / 85) / 10;
-        return document.name + '\n\n' +
-            'Жанр - ' + document.genre + '\n\n' +
-            'Рейтинг - ' + rating + '/10'+ '\n\n' +
-            document.description;
+        return '🎬' + document.name + '\n\n' +
+            document.genre && '🎭Жанр - ' + document.genre + '\n' +
+            '📊Рейтинг - ' + rating + '/10'+ '\n' +
+            document.country && '📊Страна - ' + document.country +'\n\n' +
+            document.description && '📃' + document.description;
     }
 };
